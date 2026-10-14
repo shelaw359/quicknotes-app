@@ -1,0 +1,231 @@
+/* ===== Reset and base styles ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #1f2937;
+  background-color: #f3f4f6;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: #4f46e5;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.25rem;
+}
+
+header p {
+  margin: 0.4rem 0 0;
+}
+
+/* ===== Main area ===== */
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+main section {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: #6b7280;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ===== Form (Flexbox) ===== */
+#note-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field-grow {
+  flex: 1 1 220px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #9ca3af;
+  border-radius: 6px;
+  font: inherit;
+  background-color: white;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: 2px solid #4f46e5;
+  border-color: #4f46e5;
+}
+
+/* ===== Buttons ===== */
+button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.65rem 1.2rem;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3730a3;
+}
+
+/* ===== Error and count messages ===== */
+#error-message {
+  color: #b91c1c;
+  font-weight: bold;
+  margin: 0.75rem 0 0;
+  min-height: 1.5em;
+}
+
+#note-count {
+  color: #4b5563;
+  margin: 1rem 0 0.5rem;
+}
+
+/* ===== Notes list and cards ===== */
+#notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note-card {
+  background-color: white;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-left-width: 6px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.note-text {
+  margin: 0 0 0.5rem;
+  overflow-wrap: anywhere;
+}
+
+.note-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.category-label {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.delete-btn {
+  margin-left: auto;
+  background-color: #b91c1c;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.delete-btn:hover {
+  background-color: #7f1d1d;
+}
+
+.empty-message {
+  color: #6b7280;
+  font-style: italic;
+  padding: 0.5rem 0;
+}
+
+/* ===== Category styles ===== */
+.category-personal {
+  border-left-color: #0d9488;
+}
+.category-personal .category-label {
+  background-color: #ccfbf1;
+  color: #115e59;
+}
+
+.category-work {
+  border-left-color: #991b1b;
+}
+.category-work .category-label {
+  background-color: #fee2e2;
+  color: #7f1d1d;
+}
+
+.category-study {
+  border-left-color: #2563eb;
+}
+.category-study .category-label {
+  background-color: #dbeafe;
+  color: #1e3a8a;
+}
+
+/* ===== Small screens ===== */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  main {
+    padding: 1rem 0.75rem;
+  }
+
+  #note-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .field-grow {
+    flex: none;
+  }
+
+  .note-meta {
+    flex-wrap: wrap;
+  }
+}
